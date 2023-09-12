@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 open class ResizingTokenField: UIView, UICollectionViewDataSource, UICollectionViewDelegate, ResizingTokenFieldFlowLayoutDelegate {
     
     // MARK: - Configuration
@@ -534,10 +536,13 @@ open class ResizingTokenField: UIView, UICollectionViewDataSource, UICollectionV
     // MARK: - UICollectionViewDelegate
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? ResizingTokenFieldTokenCell {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ResizingTokenFieldTokenCell,
+           let selectedItem = viewModel.token(atIndexPath: indexPath) {
+            delegate?.resizingTokenField(self, didSelectItem: selectedItem)
             _ = cell.becomeFirstResponder()
         }
     }
+
     
     // MARK: - UICollectionViewDelegateFlowLayout
     

@@ -75,7 +75,9 @@ class FeaturesViewController: UIViewController, UITextFieldDelegate, ResizingTok
     }
     
     // MARK: - ResizingTokenFieldDelegate
-    
+    func resizingTokenField(_ tokenField: ResizingTokenField, didSelectItem item: ResizingTokenFieldToken) {
+        print("XXXX",item.title)
+    }
     func resizingTokenFieldShouldCollapseTokens(_ tokenField: ResizingTokenField) -> Bool {
         return collapseSwitch.isOn
     }

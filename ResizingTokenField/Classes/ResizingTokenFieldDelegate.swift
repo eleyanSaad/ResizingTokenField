@@ -10,6 +10,10 @@ import UIKit
 
 public protocol ResizingTokenFieldDelegate: AnyObject {
     
+    func resizingTokenField(_ tokenField: ResizingTokenField, didSelectItem item: ResizingTokenFieldToken)
+
+    
+    
     /// Return `true` to allow `tokenField` to collapse tokens.
     /// This will only be called when tokens are collapsed by internal logic.
     /// For example, when token field editing ends.

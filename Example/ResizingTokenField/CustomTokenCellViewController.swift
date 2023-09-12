@@ -9,6 +9,9 @@
 import ResizingTokenField
 
 class CustomTokenCellViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ResizingTokenFieldDelegate, ResizingTokenFieldCustomCellDelegate {
+  
+    
+    
     
     class Token: ResizingTokenFieldToken, Equatable {
         static func == (lhs: Token, rhs: Token) -> Bool {
@@ -60,6 +63,9 @@ class CustomTokenCellViewController: UIViewController, UITableViewDataSource, UI
         tokenField.invalidateLayout()
     }
     
+    func resizingTokenField(_ tokenField: ResizingTokenField, didSelectItem item: ResizingTokenFieldToken) {
+        
+    }
     // MARK: - ResizingTokenFieldDelegate
     
     func resizingTokenField(_ tokenField: ResizingTokenField, willChangeIntrinsicHeight newHeight: CGFloat) {
